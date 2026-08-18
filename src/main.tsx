@@ -320,8 +320,8 @@ function App() {
           <Reveal><h2>Questions,<br /><em>answered.</em></h2></Reveal>
           <div className="faq-list">
             {faqs.map(([q, a], i) => <div className={`faq-item ${faq === i ? "open" : ""}`} key={q}>
-              <button onClick={() => setFaq(faq === i ? -1 : i)}><span>{q}</span><ChevronDown /></button>
-              <div className="faq-answer"><p>{a}</p></div>
+              <button onClick={() => setFaq(faq === i ? -1 : i)} aria-expanded={faq === i} aria-controls={`faq-answer-${i}`}><span>{q}</span><ChevronDown /></button>
+              <div className="faq-answer" id={`faq-answer-${i}`}><p>{a}</p></div>
             </div>)}
           </div>
         </section>
