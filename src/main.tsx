@@ -137,8 +137,6 @@ function App() {
 
       <main id="top">
         <section className="hero">
-          <div className="hero-glow glow-a" />
-          <div className="hero-glow glow-b" />
           <div className="hero-copy">
             <div className="trust"><span>★</span> Trusted by <b>growing businesses</b></div>
             <h1>Digital experiences built for businesses that<br /><span>want to move forward.</span></h1>
