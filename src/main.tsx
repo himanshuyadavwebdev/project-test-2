@@ -17,6 +17,8 @@ import {
   Cpu,
 } from "lucide-react";
 import "./styles.css";
+import accountImg from "./assets/image.png";
+import ctaBg from "./assets/cta-bg.jpg";
 
 const img = (id: string, w = 1200, q = 82) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=${q}`;
@@ -190,7 +192,7 @@ function App() {
           </div>
         </section>
 
-        <section className="account-banner" id="contact">
+        <section className="account-banner reveal" id="contact">
           <div className="account-copy">
             <div className="eyebrow">HAVE A PROJECT IN MIND?</div>
             <h2>Let's discuss what<br />you're building.</h2>
@@ -198,18 +200,18 @@ function App() {
               <span><Check /> No Commitment, Just a Conversation</span>
               <span><Check /> Clear Next Steps and Timeline</span>
             </div>
-            <button className="primary-btn" onClick={() => alert("Portfolio demo: contact flow would open here.")}>Start a Project <ArrowRight size={18} /></button>
-          </div>
-          <div className="account-visual">
-            <div className="orbit"></div>
-            <div className="mini-phone">
-              <div className="mini-bar"></div>
-              <div className="mini-title">Project progress</div>
-              <div className="mini-chart"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <div className="mini-stat"><span>Phase</span><b>Design & Build</b></div>
+            <div className="account-cta">
+              <button className="primary-btn" onClick={() => alert("Portfolio demo: contact flow would open here.")}>Start a Project <ArrowRight size={18} /></button>
             </div>
           </div>
+          <div className="account-visual">
+            <img className="account-image" src={accountImg} alt="Web developer coding a modern website on a laptop" />
+          </div>
         </section>
+        <noscript><style>{`.account-banner.reveal, .account-banner .eyebrow, .account-banner h2,
+          .account-banner .checks span, .account-banner .account-cta, .account-image {
+            opacity: 1 !important; transform: none !important; transition: none !important;
+          }`}</style></noscript>
 
         <section className="why section" id="why">
           <Reveal><div className="eyebrow">WHY BUSINESSES CHOOSE KODALIC</div></Reveal>
@@ -325,20 +327,32 @@ function App() {
         </section>
 
         <section className="final-cta" id="contact-cta">
-          <div className="eyebrow">START YOUR DIGITAL PRESENCE TODAY</div>
-          <h2>Let's build something<br /><em>that moves your business forward.</em></h2>
-          <p>Have a project in mind? Let's discuss what you're trying to build and how we can help.</p>
-          <button className="primary-btn" onClick={() => alert("Portfolio demo: contact flow would open here.")}>Start a Project <ArrowRight size={18} /></button>
+          <div className="cta-bg">
+            <img src={ctaBg} alt="" />
+            <div className="cta-overlay" />
+          </div>
+          <div className="cta-content">
+            <div className="eyebrow">START YOUR DIGITAL PRESENCE TODAY</div>
+            <h2>Let's build something<br /><em>that moves your business forward.</em></h2>
+            <p>Have a project in mind? Let's discuss what you're trying to build and how we can help.</p>
+            <button className="primary-btn" onClick={() => alert("Portfolio demo: contact flow would open here.")}>Start a Project <ArrowRight size={18} /></button>
+          </div>
         </section>
       </main>
 
       <footer id="footer">
+        <div className="footer-top">
+          <span className="brand footer-brand"><span className="brand-star">✳</span>Kodalic</span>
+          <span className="footer-tagline">Digital experiences built to help businesses move forward.</span>
+        </div>
+        <div className="footer-divider"></div>
         <div className="footer-main">
-          <div><div className="brand footer-brand"><span className="brand-star">✳</span>Kodalic</div><p>Digital experiences built to<br />help businesses move forward.</p></div>
+          <div className="footer-about"><p>Digital experiences built to help businesses move forward.</p></div>
           <div><h4>Company</h4><button onClick={() => scrollTo("about")}>About</button><button onClick={() => scrollTo("work")}>Our Work</button><button onClick={() => scrollTo("footer")}>Careers</button></div>
           <div><h4>Services</h4><button onClick={() => scrollTo("services")}>Web Development</button><button onClick={() => scrollTo("services")}>UI / UX</button><button onClick={() => scrollTo("services")}>Redesign</button></div>
           <div><h4>Learn</h4><button onClick={() => scrollTo("process")}>Our Process</button><button onClick={() => scrollTo("contact")}>Help Center</button><button onClick={() => scrollTo("contact")}>Contact</button></div>
         </div>
+        <div className="footer-divider"></div>
         <div className="footer-legal">
           <span>© 2026 Kodalic. All rights reserved.</span>
           <span>Every project is crafted with attention, care, and modern technology.</span>
